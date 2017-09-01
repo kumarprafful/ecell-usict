@@ -1,0 +1,17 @@
+{% extends '../log/base.html' %}
+
+{% block title %}E-Cell - Blog{% endblock %}
+
+{% block content %}
+	{% if posts %}
+		{% for post in posts %}
+			<a href="{% url 'blog:detail' post.id %}"><p>{{ post.title }}</p></a>
+			<p>{{ post.author }}</p>
+
+			
+		{% endfor %}
+	{% else %}
+		<h1>No blog post yet.</h1>
+	{% endif %}
+
+{% endblock %}

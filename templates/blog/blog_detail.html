@@ -1,0 +1,13 @@
+{% extends '../log/base.html' %}
+
+{% block title %}E-Cell - Blog{% endblock %}
+
+{% block content %}
+	{% if blog_detail %}
+		{{ blog_detail.title }}
+		{{ blog_detail.content }}
+
+
+	{% endif %}
+
+{% endblock %}
