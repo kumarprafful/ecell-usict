@@ -1,11 +1,11 @@
-{% extends '../log/base.html' %}
+{% extends '../home/base.html' %}
 
-{% block title %}E-Cell - Blog{% endblock %}
+{% block title %} - {{ blog_detail.title }}{% endblock %}
 
 {% block content %}
 	{% if blog_detail %}
-		{{ blog_detail.title }}
-		{{ blog_detail.content }}
+		<h1>{{ blog_detail.title }}</h1>
+		<p>{{ blog_detail.content }}</p>
 
 
 	{% endif %}

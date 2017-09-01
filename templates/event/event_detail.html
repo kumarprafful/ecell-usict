@@ -1,0 +1,17 @@
+{% extends '../home/base.html' %}
+
+{% block title %} - {{ event_detail.title }} {% endblock %}
+
+{% block content %}
+	{% if event_detail %}
+		<h1>{{ event_detail.title }}</h1>
+		<p>{{ event_detail.date }}</p>
+		<p>{{ event_detail.venue }}</p>
+		<p>{{ event_detail.content }}</p>
+	{% else %}
+
+	<h1>No Event as of now.</h1>
+
+	{% endif %}
+
+{% endblock %}

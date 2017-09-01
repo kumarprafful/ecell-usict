@@ -7,3 +7,8 @@ class EventListView(ListView):
 	model = Events
 	context_object_name = 'events'
 	template_name = 'event/index.html'
+
+class EventDetailView(DetailView):
+	model = Events
+	context_object_name = 'event_detail'
+	template_name = 'event/event_detail.html'
