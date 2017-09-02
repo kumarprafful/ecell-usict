@@ -3,33 +3,39 @@
 {% block title %} - Home{% endblock %}
 
 {% block content %}
-	
-		
-	
+
+
+
 
 	<div class="section1">
 		<div class="header-tag">
 			<p class="line1">WELCOME TO</p>
-			<p class="line2">E-CELL USICT</p>	
+			<p class="line2">E-CELL USICT</p>
 		</div>
 	</div>
+
 	{% include '../home/navbar.html' %}
 
+
 	<div class="intro">
+	{% if intro %}
+
 		{% for i in intro %}
 			{{ i.content|linebreaks }}
 		{% endfor %}
-	
+	{% else %}
+		<h1>Nothing to display</h1>
+	{% endif %}
 	</div>
 
-<div class="section3">
-		<div class="header-tag">
-			<p>Events</p>
+		<div class="section3">
+			<div class="header-tag">
+				<p>Events</p>
+			</div>
+
 		</div>
-		
-	</div>
 
-	
+
 	<div class="index_event">
 	<p>
 
@@ -68,30 +74,74 @@ Phasellus id hendrerit lacus, vitae viverra lectus. Aenean nibh massa, luctus eu
 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras congue lobortis efficitur. Proin porta purus lorem, quis ultrices enim ullamcorper non. Mauris pharetra leo eget lacinia malesuada. Phasellus a mauris nisl. Integer feugiat risus lorem, at malesuada lorem viverra ac. Praesent convallis, magna sed viverra gravida, massa felis malesuada magna, at tempus ligula lacus sed risus. Aenean fermentum ullamcorper mauris id dignissim. In pharetra tortor facilisis tellus bibendum finibus. Suspendisse potenti. Ut et nulla nisl. Fusce vel ornare libero, et consectetur augue. Quisque gravida varius leo, vel ultricies augue facilisis sed. Praesent vitae dui gravida, molestie dui pellentesque, cursus risus.
 
 Aenean a nibh euismod, consequat leo eu, ullamcorper lectus. Suspendisse tincidunt nunc risus. Quisque eu placerat massa, a mollis risus. Fusce aliquam, magna et dapibus imperdiet, quam urna tempor risus, vitae dapibus purus est vitae sem. Sed in nisi ac purus varius tincidunt. Aliquam at consequat tellus, eget tincidunt velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-		
+
 	</div>
 
 	<div class="team">
 		<div class="header-tag">
-			<p>TEAM</p>			
+			<p>TEAM</p>
+		</div>
+
+	</div>
+
+	<div class="index_team">
+	{% if teams %}
+
+		{% for team_member in teams %}
+
+		<div class="col-sm-4 team_banner">
+			<img class="team_image" src="{{ team_member.image.url }}">
+			<div class="team_name">
+				<h5 class="">{{ team_member.name }}</h5>
+				<h6 class="">{{ team_member.designation }}</h6>
+			</div>
+		</div>
+
+		{% endfor %}
+	{% else %}
+		<h1>No Teams to display</h1>
+
+	{% endif %}
+
+	</div>
+
+
+	<div class="contact">
+		<div class="contact-label">
+		<h1>Contact Us</h1>
+		<p>Have any query or any suggestion for us. Feel free to ask us.</p>
+		</div>
+		<div id="contactForm" class="contact_form">
+			{% include '../home/contact_form.html' %}
 		</div>
 		
 	</div>
 
-	<div class="index_team">
-		<p>
-			Aenean a nibh euismod, consequat leo eu, ullamcorper lectus. Suspendisse tincidunt nunc risus. Quisque eu placerat massa, a mollis risus. Fusce aliquam, magna et dapibus imperdiet, quam urna tempor risus, vitae dapibus purus est vitae sem. Sed in nisi ac purus varius tincidunt. Aliquam at consequat tellus, eget tincidunt velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus erat sed tempus posuere. Nulla ornare vestibulum viverra. Integer rhoncus urna at euismod ornare. Morbi nisl quam, sagittis tempor nisl vitae, ultrices pellentesque nunc. Sed vulputate maximus consectetur. Vestibulum sed gravida erat. Ut iaculis, ligula quis tincidunt varius, mi enim interdum justo, ac lobortis nibh sem ut elit. Donec porttitor posuere nulla.
-
-Phasellus id hendrerit lacus, vitae viverra lectus. Aenean nibh massa, luctus eu rhoncus in, efficitur sit amet erat. Nam vel risus elit. Fusce sodales scelerisque magna, ac accumsan tellus vestibulum commodo. Nunc eget lorem semper, viverra ipsum vitae, scelerisque nibh. Proin porta vehicula urna rhoncus porta. Nulla maximus ornare pharetra. Vestibulum sagittis posuere auctor. Suspendisse eu gravida augue.
-
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras congue lobortis efficitur. Proin porta purus lorem, quis ultrices enim ullamcorper non. Mauris pharetra leo eget lacinia malesuada. Phasellus a mauris nisl. Integer feugiat risus lorem, at malesuada lorem viverra ac. Praesent convallis, magna sed viverra gravida, massa felis malesuada magna, at tempus ligula lacus sed risus. Aenean fermentum ullamcorper mauris id dignissim. In pharetra tortor facilisis tellus bibendum finibus. Suspendisse potenti. Ut et nulla nisl. Fusce vel ornare libero, et consectetur augue. Quisque gravida varius leo, vel ultricies augue facilisis sed. Praesent vitae dui gravida, molestie dui pellentesque, cursus risus.
-
-Aenean a nibh euismod, consequat leo eu, ullamcorper lectus. Suspendisse tincidunt nunc risus. Quisque eu placerat massa, a mollis risus. Fusce aliquam, magna et dapibus imperdiet, quam urna tempor risus, vitae dapibus purus est vitae sem. Sed in nisi ac purus varius tincidunt. Aliquam at consequat tellus, eget tincidunt velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-		</p>
-		
-	</div>
 
 
+<footer>
+<div class="footer">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	
+</div>
+</footer>
 
 
 
@@ -102,11 +152,11 @@ Aenean a nibh euismod, consequat leo eu, ullamcorper lectus. Suspendisse tincidu
 
 <script>
 	$(document).ready(function() {
-  
+
   $(window).scroll(function () {
       //if you hard code, then use console
-      //.log to determine when you want the 
-      //nav bar to stick.  
+      //.log to determine when you want the
+      //nav bar to stick.
       console.log($(window).scrollTop())
     if ($(window).scrollTop() > 550) {
       $('#nav1').addClass('navbar-fixed');
@@ -123,7 +173,7 @@ Aenean a nibh euismod, consequat leo eu, ullamcorper lectus. Suspendisse tincidu
 
 
 
-		
-	
+
+
 
 {% endblock %}
