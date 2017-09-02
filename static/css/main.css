@@ -1,20 +1,76 @@
-html{
+body, html{
+	height: 100%;
+	margin: 0;
+	padding:0;
 	display: block;
+
+}
+.section1, .section2, .section3, .team{
+	position: relative;
+	opacity:0.7;
+	/*margin-top: -1.5%;*/
+	background-color: #222;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
 }
 
-body{
-	margin: 0;
-	padding: 0;
+.section1{
+	background-image: url('../../static/images/pexels-photo-355988.jpeg');
+	min-height: 100%;
+	
 }
-.navbar{
-	border-radius: 0;
+.header-tag{
+	position: absolute;
+	color: #000;
+	line-height: 1.3em;
+	transform: scale(1, 1.5);
+
+	text-align: center;
+	width: 100%;
+
+    font-family: 'Archivo Black', sans-serif;
+
+	
+	/*left: 50%;*/
+	top: 40%;
+	font-weight: 45px;
+
+
+	font-size: 3em;
+
 }
-.nav{
-	margin-right: 2%;
+.line1{
+	color: #fff;
 }
-.navbar-brand{
-	margin-left: 2%;
+.line2{
+	color:  #005c99;
 }
+.intro{
+	text-align: center;
+	padding: 2em 4em;
+}
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+}
+.section2{
+	background-image: url('../../static/images/writing-notes-idea-conference.jpg');
+	min-height: 20em;
+}
+.section3{
+	background-image: url('../../static/images/pexels-photo-269451.jpeg');
+	min-height: 20em;
+}
+.team{
+	background-image: url('../../static/images/pexels-photo-209640.jpeg');
+	min-height: 20em;
+}
+
 /*
 nav{
 	width: 100%;
