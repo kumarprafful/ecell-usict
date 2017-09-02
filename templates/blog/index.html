@@ -3,10 +3,14 @@
 {% block title %} - Blog{% endblock %}
 
 {% block content %}
+<h1>Blogs</h1>
+
 	{% if posts %}
 		{% for post in posts %}
-			<a href="{% url 'blog:detail' post.id %}"><p>{{ post.title }}</p></a>
+			<a href="{% url 'blog:detail' post.id %}"><h1>{{ post.title }}</h1></a>
 			<p>{{ post.author }}</p>
+
+
 
 			
 		{% endfor %}
